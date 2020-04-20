@@ -5,6 +5,7 @@ module.exports = {
       repo: 'DynamicHands/PowerApps-Guidelines',
       editLinks: true,
       lastUpdated: 'Last Updated', // string | boolean
+      logo: 'logo.png',
       nav: [
         { text: 'Home', link: '/' },
         { text: 'Guidelines', link: '/guidelines/' },
@@ -15,16 +16,17 @@ module.exports = {
         {
           title: 'Introduction',
           path: '/guidelines/',
-          collapsable: false,
+          collapsable: true,
           sidebarDepth: 2
         },
         {
           title: 'Guidelines',
-          collapsable: false,
-          sidebarDepth: 1,
+          collapsable: true,
+          sidebarDepth: 2,
           children: [
             '/guidelines/installation-configuration',
-            '/guidelines/entity-modeling',
+            '/guidelines/naming-conventions',
+            '/guidelines/entity-design',
             '/guidelines/extending-clientside',
             '/guidelines/extending-serverside',
             '/guidelines/datamigrations',
