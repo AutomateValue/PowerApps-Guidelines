@@ -1,4 +1,4 @@
-# Extending server-side (DH2200)
+# External applications (DH2200)
 
 ## DH2201 Implement handling of API limits for external applications
 External applications may reach the API limits and start throwing an exception. If you are developing a third party application, then you should always implement this to avoid crashes. Below is a table of the different error codes and their description. 
