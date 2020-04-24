@@ -61,6 +61,8 @@ We created two Vue-components to visualize if rules are required or recommended.
 
 We are hosting the PowerApps Guidelines on [Netlify](https://www.netlify.com/). Netlify will build on each commit in the `master` branch and publish it, so deploying is fully automated.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/98c67366-67a1-45ad-b485-91c072a23906/deploy-status)](https://app.netlify.com/sites/powerapps-guidelines/deploys)
+
 Want to deploy yourself, than running the following command will publish the guidelines as a static website in the folder `.vuepress/dist` which can than be served by any webserver.
 
 ```sh
