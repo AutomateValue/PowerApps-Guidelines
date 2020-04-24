@@ -30,3 +30,8 @@ The OrganizationServiceContext class is a concrete class that doesn't have a bas
     }
 
 ````
+
+## DH2103 Always implement paging for RetrieveMultiple when not using TopCount
+When you use RetrieveMultiple, it will only return results up to a specific maximum (5000 by default). If your query would return more data, it requires you to execute another query. Even if you won't expect your query to ever reach that limit, implement it just in case.
+
+Documentation and sample code on how to implement this can be found here for [QueryExpressions](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/org-service/page-large-result-sets-with-queryexpression) and [FetchExpressions](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/org-service/page-large-result-sets-with-fetchxml).
