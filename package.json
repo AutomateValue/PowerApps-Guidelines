@@ -3,7 +3,15 @@
   "name": "powerapps-guidelines",
   "version": "1.0.0",
   "description": "Coding standards and Guidelines for Customizing and Extending PowerApps & Dynamics 365",
-  "keywords": [ "powerapps", "dynamics-crm", "dynamics-365", "d365", "guidelines", "coding-standards", "best-practices" ],
+  "keywords": [
+    "powerapps",
+    "dynamics-crm",
+    "dynamics-365",
+    "d365",
+    "guidelines",
+    "coding-standards",
+    "best-practices"
+  ],
   "homepage": "https://github.com/DynamicHands/PowerApps-Guidelines",
   "bugs": {
     "url": "https://github.com/DynamicHands/PowerApps-Guidelines/issues"
@@ -12,7 +20,6 @@
   "author": "Rémy van Duijkeren <remy.vanduijkeren@dynamichands.nl (https://www.dynamichands.nl)",
   "license": "LGPL-3.0",
   "main": "index.js",
-  "dependencies": {},
   "scripts": {
     "dev": "vuepress dev",
     "build": "vuepress build"
