@@ -39,7 +39,13 @@ Documentation and sample code on how to implement this can be found here for [Qu
 ## DH2104 Exceptions thrown towards the platform within Plugins & Workflow Activities should always be of type 'InvalidPluginExecutionException' and contain an error code for identification
 When implementing error handling make sure that you always throw exceptions of type 'InvalidPluginExecutionException'. This exception class allows you to pass an errorcode of type integer. Always identify your errors with an unique number. This makes troubleshooting a lot easier as you can search code for this specific number.
 
-## DH2105 Implement handling of API limits for external applications
+## DH2105 Use filtering attributes in plugin registration to improve performance
+When registering plugins you can specify filtering attributes. You must always do that if possible and reduce the amount of attributes to a minimum. This will result in the plugin to only be executed if required and thus increasing performance.
+
+## DH2106 Make Plugins & Workflows asynchronous if possible to improve performance
+The user won't need to wait for your plugin or workflow if it is asynchronous. This will improve the user experience and keeps dynamics running smoothly. 
+
+## XXXXX (should be in different guideline) Implement handling of API limits for external applications
 External applications may reach the API limits and start throwing an exception. If you are developing a third party application, then you should always implement this to avoid crashes. Below is a table of the different error codes and their description. 
 | Error Code | Description |
 | --| -- |
