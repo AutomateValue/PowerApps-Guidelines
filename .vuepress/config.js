@@ -28,6 +28,7 @@ module.exports = {
             '/guidelines/installation-configuration',
             '/guidelines/naming-conventions',
             '/guidelines/entity-design',
+            '/guidelines/design-patterns',
             //'/guidelines/ux-design',
             '/guidelines/extending-clientside',
             '/guidelines/extending-serverside',

@@ -1,4 +1,11 @@
-# Installation & configuration (DH1000)
+# Installation & configuration 
+
+## Default enviroment is Personal
+
+![environment-naming-admin](/assets/environment-naming-admin.png)
+
+## Deployment stratagy for customer type 1
+
 
 ## Security
 

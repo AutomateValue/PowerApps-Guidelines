@@ -1,4 +1,4 @@
-# Extending server-side (DH2100)
+# Extending server-side
 
 ## DH2101 Plugins & Workflow Activities must be stateless <Recommended/>
 

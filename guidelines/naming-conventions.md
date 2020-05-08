@@ -1,10 +1,44 @@
 # Naming conventions
 
-## DH1100 Don't use `new_` as prefix <Required/>
+## Environments must be named by purpose <Required/>
+Name environments only be there purpose, like Production or Test.
+
+❌ DO NOT use abbrevations or contractions, because most users are not aware of the meaning.
+
+❌ DO NOT use the customer name in the environment name, because this is already clear by the tenant where the environment lives in ([DRY principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)).
+
+::: tip
+You can even use [emoji's](https://getemoji.com/) to make it even more clear for users!
+:::
+
+This will result into the following examples:
+
+❌ DO NOT:
+
+- Contoso Production
+- Contose PRD
+- PRD
+- TST
+
+✔️ DO:
+
+- Production
+- Test
+- ⚡ Production
+- 📦 Acceptance
+- 🚦 Test
+- 🧪 Development
+- 👨‍💼 Personal
+- 📊 Load Test
+
+This will result into a clear homescreen for the users.
+![environment-naming-homescreen](/assets/environment-naming-homescreen.png)
+
+## Don't use `new_` as prefix <Required/>
 
 The prefix  is determined by the publisher. Check if there is already a good custom publisher available and use that one. If not, create a new publisher with a good prefix like for example the customer abbrivation.
 
-## DH1101 Don't use `Id` in the name of a lookup field <Required/>
+## Don't use `Id` in the name of a lookup field <Required/>
 
 This `Id` always bugged me, because of this simple fact - it's not an Id in code, it's a reference. So if you just wanted the `Id` in code you use this:
 
@@ -18,7 +52,7 @@ Which I don't like, because you're repeating the abbreviation `Id`. In my opinio
 var contactId = ((EntityReference)customMethod["dh_Contact"]).Id;
 ```
 
-## DH1102 One-To-Many relationships should have clear names <Recommended/>
+## One-To-Many relationships should have clear names <Recommended/>
 
 One-to-Many aka Lookups relationship should have the following name, where any prefix is removed apart from the first one:
 
@@ -31,7 +65,7 @@ This will look like:
 |dh_account_project_customer      | dh_customer      |
 |dh_account_project_endcustomer   | dh_endcustomer   |
 
-## DH1103 Many-To-Many relationships should have clear names
+## Many-To-Many relationships should have clear names
 
 Many-to-Many relationships should have the following name, where any prefix is removed apart from the first one:
 
