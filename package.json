@@ -24,7 +24,9 @@
     "dev": "vuepress dev",
     "build": "vuepress build"
   },
-  "devDependencies": {
-    "vuepress": "^1.4.1"
+  "dependencies": {
+    "@vuepress/plugin-google-analytics": "^1.5.0",
+    "vuepress": "^1.5.0",
+    "vuepress-bar": "^0.3.1"
   }
 }
