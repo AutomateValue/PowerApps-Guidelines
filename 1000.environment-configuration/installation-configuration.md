@@ -1,3 +1,11 @@
+---
+rule_id: 1204
+rule_category: class-design
+title: This is another rule 3
+severity: Depends
+read_more: false
+---
+
 # Installation & configuration 
 
 ## Default enviroment is Personal

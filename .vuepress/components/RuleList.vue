@@ -1,27 +1,43 @@
 <!-- https://snipcart.com/blog/vuepress-tutorial-vuejs-documentation 
 ---
 rule_id: 1010
-rule_category: class-design
 title: Don't suppress compiler warnings using the `new` keyword
-severity: 1
+severity: Required
 ---
 -->
 
 <template>
 <div>
-    <div v-for="rule in rules">
-        <h2>
+    <table>
+        <thead>
+            <tr><th>rule</th><th>name</th><th>severity</th></tr>
+        </thead>
+        <tbody>
+        <!-- <h2>
             <router-link :to="rule.path">{{ rule.frontmatter.title }}</router-link>
-            <template v-if="rule.frontmatter.severity == '1'"><Required /></template>
-            <template v-if="rule.frontmatter.severity == '2'"><Recommended /></template>
+            <template v-if="rule.frontmatter.severity == 'Required'"><Required /></template>
+            <template v-if="rule.frontmatter.severity == 'Recommended'"><Recommended /></template>
+            <template v-if="rule.frontmatter.severity == 'Depends'"><Depends /></template>
         </h2>
-        
-        <p>{{ rule.frontmatter.rule_category }}</p>
 
         <span v-html="rule.excerpt"></span>
 
+        <template v-if="rule.frontmatter.read-more != 'false'">
         <p><router-link :to="rule.path">Read more</router-link></p>
-    </div>
+        </template> -->
+
+
+            <tr v-for="rule in rules">
+                <td>DH{{ rule.frontmatter.rule_id }}</td>
+                <td>{{ rule.frontmatter.title }}</td>
+                <td>
+                    <template v-if="rule.frontmatter.severity == 'Required'"><Required /></template>
+                    <template v-if="rule.frontmatter.severity == 'Recommended'"><Recommended /></template>
+                    <template v-if="rule.frontmatter.severity == 'Depends'"><Depends /></template>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 </template>
 
@@ -29,8 +45,10 @@ severity: 1
 export default {
     computed: {
         rules() {
+            var currentDirectory = window.location.pathname.split('/').slice(0, -1).join('/');
+
             return this.$site.pages
-                .filter(x => x.path.startsWith('/rules/') && x.frontmatter.publish)
+                .filter(x => x.path.startsWith(currentDirectory) && !x.path.endsWith('/'))
                 .sort((a, b) => a.frontmatter.rule_id - b.frontmatter.rule_id);
         }
     }

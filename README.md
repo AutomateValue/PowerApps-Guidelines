@@ -4,7 +4,7 @@ heroImage: logo.png
 heroText: PowerApps Guidelines
 tagline: Coding standards and Guidelines for Customizing and Extending PowerApps & Dynamics 365
 actionText: Get Started →
-actionLink: /guidelines/
+actionLink: /00.introduction
 features:
 - title: Code standards
   details: No confusions how to do and name parts of the solution. Understanding solutions faster of other projects.
@@ -38,6 +38,11 @@ To install or update Node.js download the installer from <https://nodejs.org.> T
 npm packager npm install npm@latest -g
 ```
 
+Then restore all dependencies of the project by open the command line in the root of the project and type:
+```sh
+npm install
+```
+
 ### Running
 
 To start writing documentation:
@@ -52,10 +57,11 @@ This command will start a local development server on <http://localhost:8080/> t
 
 TODO
 
-We created two Vue-components to visualize if rules are required or recommended. Place the following tags behing the tilte of a guideline to indicate the importance:
+We created two Vue-components to visualize if rules are required or recommended. Place the following tags behing the title of a guideline to indicate the importance:
 
-- The tag `<Required/>` will be rendered into <Required/> . Use this for guidelines that you should never skip and should be applicable to all situations;
-- The tag `<Recommended/>` will be rendered into <Recommended/> . Use this for strongly recommended guidelines.
+1. The tag `<Required/>` will be rendered into <Required/> . Use this for guidelines that you should never skip and should be applicable to all situations.
+2. The tag `<Recommended/>` will be rendered into <Recommended/> . Use this for strongly recommended guidelines.
+3. The tag `<Depends/>` will be rendered into <Depends/> . Use this for guidellines that may not be applicable in all situations.
 
 ## Deploying
 

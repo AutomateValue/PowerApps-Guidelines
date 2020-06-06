@@ -24,7 +24,7 @@ This will result into the following examples:
 
 - Production
 - Test
-- ⚡ Production
+- 🚀 Production
 - 📦 Acceptance
 - 🚦 Test
 - 🧪 Development
