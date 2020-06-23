@@ -42,3 +42,8 @@ Interactive:
   - Better: Prompt for password
   - Better: Use registered app
   - Best: Xrm.Tooling
+
+  ## Solutions
+
+- Focus on small footprint
+- (Re)use as much as possible of default functionality. Focus on What-if scenario that ure solution is removed: will the data still be available (as much as possible).
