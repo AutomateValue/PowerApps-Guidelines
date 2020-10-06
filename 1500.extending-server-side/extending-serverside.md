@@ -49,4 +49,8 @@ When registering plugins you can specify filtering attributes. You must always d
 
 ## Make Plugins & Workflows asynchronous if possible to improve performance <Required/>
 
-The user won't need to wait for your plugin or workflow if it is asynchronous. This will improve the user experience and keeps dynamics running smoothly. 
+The user won't need to wait for your plugin or workflow if it is asynchronous. This will improve the user experience and keeps dynamics running smoothly.
+
+## Don't impersonate a user not knowing it is existing active user <Required/>
+
+Don't run code based on an user that you don't know if it is active and has a licence, like when recreating an old task on behalf of that user.
