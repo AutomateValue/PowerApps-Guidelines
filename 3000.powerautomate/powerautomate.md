@@ -23,6 +23,11 @@ Example: accounts(2999a72c-c4ed-ea11-a817-000d3abb4345)
 
 ![lookup-with-type](/assets/powerautomate-lookup-with-type.png)
 
+This plural name is not the plural name of the entity, but created by odata. It will pick the entityname and add s, es, ies. To found out with the plural name is do:
+````
+<org ur>/api/data/v9.1/EntityDefinitions(LogicalName='<LogicalName>')?$select=EntitySetName
+````
+
 ## Avoid unneeded Apply to Each steps ##
 
 If only one value is needed or is returned then doing an Apply to Each step is not needed.
