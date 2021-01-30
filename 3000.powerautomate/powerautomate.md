@@ -52,3 +52,9 @@ body('Get_Publications')?['value']?[0]?[cht_publicationid']
 ## Use Find Items as name for Lists steps ##
 
 ## USe Get Item as name for Get by ID steps .##
+
+## Make Apply to Each steps parallel when doing bulk ##
+
+*Apply to Each* steps process sequential (one-by-one) by default. When a lot of records need to be looped, changing it to run in parallel, will improve performance a lot.
+
+Go to the settings of the step (menu->settings) and enable **Concurrency Control**. Default degree of Parallelism is 20 which will result around 10x performance, depending on the workload. Bring it down to 10 or lower when you experience issues.
