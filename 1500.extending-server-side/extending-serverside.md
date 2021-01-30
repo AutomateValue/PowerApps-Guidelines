@@ -43,6 +43,11 @@ Documentation and sample code on how to implement this can be found here for [Qu
 
 When implementing error handling make sure that you always throw exceptions of type 'InvalidPluginExecutionException'. This exception class allows you to pass an errorcode of type integer. Always identify your errors with an unique number. This makes troubleshooting a lot easier as you can search code for this specific number.
 
+TODO:
+In the Unified Interface an exception not InvalidPluginExecutionExeception will be shown as. InvalidPluginExecutionExeception will shown the message as is.
+
+Exception Message: An unexpected error occurred from ISV code. (ErrorType = ClientError) Unexpected exception from plug-in (Execute):  DH.Spotler.Plugins.CreateOrUpdateSpotlerJob: System.Exception: Object reference not set to an instance of an object.
+
 ## Use filtering attributes in plugin registration to improve performance <Required/>
 
 When registering plugins you can specify filtering attributes. You must always do that if possible and reduce the amount of attributes to a minimum. This will result in the plugin to only be executed if required and thus increasing performance.
