@@ -61,6 +61,8 @@ Go to the settings of the step (menu->settings) and enable **Concurrency Control
 
 ## Use Connection References ##
 
+![Connection References](/assets/powerautomate-connection-references.png)
+
 TODO: Explain benefit
 
 Keep in mind that a maximum of 16 flows can use one connection reference. If the same connection needs to be used in more than 16 flows, then create another connection reference with a connection to the same connector. There is no limit to the number of actions in each flow that can be associated with the connection reference.
