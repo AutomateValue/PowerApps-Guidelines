@@ -62,3 +62,43 @@ entity?
 – Do you need field level security in the future?
 – Does existing data conform to the data type?
 – Does the field take part in built-in functionality like originating lead ID that is populated during convert?
+
+
+## DateTime Fields
+
+Most IT systems work with date&times in different timezones use the following rules:
+- show local timezone in the user interface
+- store as UTC
+- integrate in UTC
+
+Systems that integrate, integrate in UTC. When those systems that are integrating, want to show the date&times to the user, they it should show them in the local timezone of the user.
+
+By default Dynamics 365 CE/PowerPlatform/Dataverse uses the mentioned rules above. It will use the user timezone, set in in personal settings of Dynamics 365 (or windows settings for Canvas Apps), in forms and views. When saving a record it will be stored in UTC. This means for a user in the Netherlands, the value on screen 26-6-2020 00:00, will be saved as 25-6-2020 22:00 UTC (-1 or -2 depending on Zomertijd) in the database. When integrating the API will return two values, the stored value (UTC) and the FormattedValue (timezone and format of calling user). This FormattedValue is only to be used when immidatly shown to the user. Don't store this value in other systems, because when the calling user timezone is changed, things will go wrong.
+
+In this case we are not interested in the time part of the TakeOverDate. It's a date like a birthdate, that is independent of the timezone. Preferable we like to store this in the database as a date without time.
+
+Behaviors
+Dynamics 365 CE/PowerPlatform also has some other behaviors for storing (and formatting) date&time, depending on the context how a date&time is used. The following behaviors for date&time are possible (https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/behavior-format-date-time-attribute#specify-the-behavior-of-a-date-and-time-attribute):
+UserLocal
+This is the default and is already described above.
+TimeZoneIndependent
+There is no timezone conversion taking place between the User Interface and storing the data. What you see on the screen, is what is stored for every user arond the world. This still stores the time, so timecalculations are still possible. This is usefull for date&times where the time could be important, but is timezone indepent, like checkin times for hotels.
+In the WebAPI the issue example would be shown as 2020-06-26T00:00:00Z.
+DateOnly
+This is the same as TimeZoneIndepent, but setting time is not possible. The time will be always be 00:00:00. It is truly only a Date. This is usefull for things like birthdays.
+In the WebAPI the issue example would be shown as 2020-06-26!
+Keep in mind that the behaviors is for what happens in the background. What is show in the User Interface also depends on the format (DateTime or DateOnly).
+
+The behavior of an existing DateTime field in Dynamics365 can be changed from UserLocal to TimeZoneIndependent or DateOnly. Keep in mind this is a irreversable change! For a international company like Heineken with possible users in different timezones this should be done with care. After the change, this behavior only applies for newly added/changed data, not currently stored data.
+
+Solution
+DateTime fields in the system should be reviewed in there context. Starting(or only) with fields that are used by Blink. Do these DateTime fields only represent the Date (or DateTime independant of timezone). If so the behavior (and format) should be changed in the following steps:
+Decide on DateOnly or TimeZoneIndependent:
+For fields where only the date is important the DateOnly behavior is the best to use and only use TimeZoneIndependent when time is/could be important. But there is a risk that Javascript,/C# with timecalaculations and integrations like Blink that can't handle DateOnly (without a change). This should be checked first, or TimeZoneIndependent should be chosen for safety.
+Review all dependencies (businessrules, workflows, calculated and rollop fields) for issues
+Change behavior of field
+Open up each dependencies and save it, to make user the latest metadata is used.
+Convert the existing values in the database to the expected values *.
+* To convert existing values a batch-tool needs to be created to execute this (see also https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/behavior-format-date-time-attribute#convert-behavior-of-existing-date-and-time-values-in-the-database). 
+
+Estimation is partly dependend on the number of fields. Proberly 1 to 2 hours per datetime fields. Apart from this a batchtool needs to be created for the existing data, which will be like 1 or 2 days to create.
