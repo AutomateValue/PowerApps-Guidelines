@@ -58,3 +58,9 @@ body('Get_Publications')?['value']?[0]?[cht_publicationid']
 *Apply to Each* steps process sequential (one-by-one) by default. When a lot of records need to be looped, changing it to run in parallel, will improve performance a lot.
 
 Go to the settings of the step (menu->settings) and enable **Concurrency Control**. Default degree of Parallelism is 20 which will result around 10x performance, depending on the workload. Bring it down to 10 or lower when you experience issues.
+
+## Use Connection References ##
+
+TODO: Explain benefit
+
+Keep in mind that a maximum of 16 flows can use one connection reference. If the same connection needs to be used in more than 16 flows, then create another connection reference with a connection to the same connector. There is no limit to the number of actions in each flow that can be associated with the connection reference.
