@@ -39,6 +39,12 @@ When you use RetrieveMultiple, it will only return results up to a specific maxi
 
 Documentation and sample code on how to implement this can be found here for [QueryExpressions](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/org-service/page-large-result-sets-with-queryexpression) and [FetchExpressions](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/org-service/page-large-result-sets-with-fetchxml).
 
+[MSDYN365 INTERNALS: PAGING GOTCHAS](https://markcarrington.dev/2021/02/23/msdyn365-internals-paging-gotchas/)
+
+# If you only expect one result from RetrieveMultiple then add TopCount = 1
+
+This will stop CRM from searching further. Optionally set it to 2, if you want to throw an error if there is more then 1 found.
+
 ## Exceptions thrown towards the platform within Plugins & Workflow Activities should always be of type 'InvalidPluginExecutionException' and contain an error code for identification <Required/>
 
 When implementing error handling make sure that you always throw exceptions of type 'InvalidPluginExecutionException'. This exception class allows you to pass an errorcode of type integer. Always identify your errors with an unique number. This makes troubleshooting a lot easier as you can search code for this specific number.
@@ -59,3 +65,49 @@ The user won't need to wait for your plugin or workflow if it is asynchronous. T
 ## Don't impersonate a user not knowing it is existing active user <Required/>
 
 Don't run code based on an user that you don't know if it is active and has a licence, like when recreating an old task on behalf of that user.
+
+## Write QueryExpressions as simple as possible ##
+
+When creating a QueryExpression the constructor will already create an FilterExpression (default And) and PagingInfo (and ColumnSet). This means a simple query can be written very clear, like:
+
+      this._criteria = new FilterExpression();
+      this._pageInfo = new PagingInfo();
+      this._columnSet = new ColumnSet();
+
+```c#
+QueryExpression query = new QueryExpression
+{
+    EntityName = entityName,
+    ColumnSet = cols,
+    Criteria = new FilterExpression
+    {
+        Conditions =
+        {
+                        new ConditionExpression
+                        {
+                            AttributeName = attributeName,
+                            Operator = ConditionOperator.Equal,
+                            Values = { attributeValue }
+                        }
+                    }
+                                    }
+                                };
+
+var query = new QueryExpression(dh_spotlerpermission.EntityLogicalName)
+{
+    ColumnSet = new ColumnSet("dh_name", "dh_subscribed"),
+    Criteria =
+    {
+        Conditions = { new ConditionExpression("dh_leadid", ConditionOperator.Equal, originatingLead.Id) }
+    }
+};
+```
+
+## Try to use GetAttributeValue ##
+
+http://crmentropy.blogspot.com/2013/08/entitygetattributevalue-explained.html
+
+
+## Don't put every plugin in a seprate project
+
+This is a code smell. You see this when new developers take over a project (or not experinced), they will create a new project.
