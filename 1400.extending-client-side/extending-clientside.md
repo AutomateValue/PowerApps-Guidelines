@@ -72,7 +72,7 @@ This especially applies to ISV's, where the solution is managed and customer can
 
 For ISV's it could also be wise to have all your javascript code in one javascript file in your solution, to make your public API as small as possible. By doing this the customer can only make one javascript dependency. Use tools like Webpack or Rollup to develop in multiple files, but deploy it as one file.
 
-## Make only one event handler public for forms: the onLoad event handler (ISV)
+## Make only one event handler public for forms: the onLoadForm event handler (ISV)
 
 Every event handler (public function) you make available in your javascript is part your public API, that needs to be maintained and that can't be changed or removed easily. This especially applies to ISV, where the solution is managed and customer can create a dependency on every public function in you're javascript code.
 
@@ -81,7 +81,7 @@ Only make the onLoad (form) event handler available. Every other event handler i
 ```js
 (function (exports) {
 
-    function formOnLoad(executionContext) {
+    function onLoadForm(executionContext) {
         const formContext = executionContext.getFormContext();
         
         // bind events
@@ -97,7 +97,7 @@ Only make the onLoad (form) event handler available. Every other event handler i
         // Do work...
     }
     
-    exports.formOnLoad = formOnLoad; // make it public
+    exports.onLoadForm = onLoadForm; // make it public
 
 }(this.MyCustomCode = this.MyCustomCode || {}));
 
@@ -105,6 +105,38 @@ Only make the onLoad (form) event handler available. Every other event handler i
 ```
 
 Doing it this way, makes it sure, that only one dependency exist on your code: the **formOnLoad** function. This also prevents _'hidden'_ event handlers on fields on the form you need to look for. (p.s. use Script Finder in the XrmToolkit to help with this).
+
+## Add onDataLoad and put fireOnChange in this method
+
+The OnLoad form event is only triggerd when the form is loaded or the refresh button is clicked. If you want behavior that needs to be triggered when the data is changed after saving the onLoad data event should be used. This event is also being called after the onLoad form event.
+
+```js
+(function (exports) {
+
+    function onLoadForm(executionContext) {
+        const formContext = executionContext.getFormContext();
+        
+        // bind events
+        formContext.getAttribute("address1_postalcode").addOnChange(onChangePostalCode);
+        formContext.data.addOnLoad(onLoadData);
+    }
+
+    function onLoadData(executionContext) { // triggerd after save
+        const formContext = executionContext.getFormContext();
+
+        formContext.getAttribute("address1_postalcode").fireOnChange();
+    }
+
+    function onChangePostalCode(executionContext) {
+        // Do work...
+    }
+    
+    exports.onLoadForm = onLoadForm; // make it public
+
+}(this.MyCustomCode = this.MyCustomCode || {}));
+
+// Bind the form onload event to: MyCustomCode.onLoad
+```
 
 ## Use x == null to check for undefined and null
 
@@ -157,7 +189,7 @@ Try to write ES6 modules and than convert using a packer (Webpack, Rollup) to a 
 Remove braces from guid's when doing OData calls like:
     let cleanedid = id.replace(/[{}]/g, "");
 
-If doing this a lot an option could be to extend string with following method: 
+If doing this a lot an option could be to extend string with following method:
     /**
      * Returns a string where { and } is removed. Use this to clean up GUID's for OData calls.
      * @returns {string} - String where { and } is removed.
@@ -172,7 +204,7 @@ Browsers have improved a lot and currently using ES2019 as target for javascript
 
 async...await support https://www.w3schools.com/js/js_async.asp Most browser support this already from 2016/2017.
 
-When using USD, then validate which browser engine is used (the new Edge engine can be used, which can handle ES2019 without problems).
+When using USD, then validate which browser engine is used (the new Edge engine can be used, which can handle ES2019 without any problems).
 
 ## Clear notification at start of function
 
