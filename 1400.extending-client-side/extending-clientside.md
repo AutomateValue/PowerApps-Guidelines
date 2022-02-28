@@ -256,7 +256,7 @@ Reply to emails are always saved before the forms opens, so Form Type is Update.
         formContext.getAttribute("from").setValue([{entityType: "queue", id: queueId, name: queueName}]);
     }
 
-# Set Form paramaters with the name and expected value 
+## Set Form paramaters with the name and expected value 
 
 By giving form parameters the same name and correct value as the attribute on the target form, the parameters will auto-set the fields on the target form. In this way the receving form parameters on the the target form doesn't need to be explicit set.
 
@@ -280,3 +280,7 @@ When possible, use the new form option 'createFromEntity', to make use of the ma
     }
 
     await Xrm.Navigation.openForm(formOptions, formParameters);
+
+## 
+https://docs.microsoft.com/en-us/powerapps/maker/model-driven-apps/design-performant-forms
+https://docs.microsoft.com/en-us/powerapps/developer/model-driven-apps/define-ribbon-enable-rules#custom-rule
