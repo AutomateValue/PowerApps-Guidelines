@@ -44,6 +44,11 @@ To get rid ot the Apply to Each step we can combine the two expressions into one
 ````
 outputs('Get_Publications')?['body/value']?[0]?[cht_publicationid']
 ````
+To get the numbers of items, like for checking there are existing records, than write:
+````
+length(outputs('Get_Publications')?['body/value'])
+````
+
 or try to use body() instead of output()
 ````
 body('Get_Publications')?['value']?[0]?[cht_publicationid']
