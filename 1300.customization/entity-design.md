@@ -63,6 +63,15 @@ entity?
 – Does existing data conform to the data type?
 – Does the field take part in built-in functionality like originating lead ID that is populated during convert?
 
+## Yes/No (or blank) choice
+
+Always try to use the expliciet Yes/No chooice datatype, if possible. This will make sure in code it is a boolean, wich makes programming easier, and SQL Server can store this more efficiently.
+
+One downside is that needs a default value, yes or no, so you can't make it blank by default. It can be made blank (=null) by making the column not required and settings it explicitly to null, but it is cumbersome.
+
+A second best option is to create a global choice (option) with the values Yes (=1) and No (=0). Give this gloabl chooice a good generic name like, *Optional Yes or No*, so that it can be reused in your environment.
+
+p.s. there is also a build in global choice called *yesornoselectiontype*, but we can't select this one :(.
 
 ## DateTime Fields
 
