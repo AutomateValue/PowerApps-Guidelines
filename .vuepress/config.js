@@ -1,3 +1,4 @@
+
 module.exports = {
     title: 'PowerApps Guidelines',
     description: 'Coding standards and Guidelines for Customizing and Extending PowerApps & Dynamics 365',
@@ -27,6 +28,8 @@ module.exports = {
             '/guidelines/installation-configuration',
             '/guidelines/naming-conventions',
             '/guidelines/entity-design',
+            '/guidelines/design-patterns',
+            //'/guidelines/ux-design',
             '/guidelines/extending-clientside',
             '/guidelines/extending-serverside',
             '/guidelines/datamigrations',

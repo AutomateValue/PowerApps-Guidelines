@@ -1,10 +1,10 @@
-# Entity design (DH1100)
+# Entity design
 
 ::: tip
 [Dynamics CRM Tip of the Day](https://crmtipoftheday.com/) created a great guide for [creating entities in Dynamics 365](https://crmtipoftheday.com/wp-content/uploads/2016/05/entity.pdf).
 :::
 
-## DH1104 How do you decide between using a Lookup Field or an Option Set?
+## How do you decide between using a Lookup Field or an Option Set?
 
 Lookups are vastly improved since the change from Web UI to the Unified Client Interface (UCI), so more often lookups are the better choice in UCI than it was in Web UI.
 
@@ -24,12 +24,12 @@ Option Set vs. Lookup in UCI:
 |Clicking in field   |Shows list with all values       |Shows recently used records |
 |Shown information   |Only value                       |Two columns until you click the expend arrow, which shows all columns. (Three columns in Web UI) |
 
-## DH1105 Data Modeling as a team
+## Data Modeling as a team
 • Agree on naming with emphasis on consistency
 – Sports Team or Team
 – Sports Team Player, Team Player, or Player
 
-## DH1106 Built-in vs. Custom Entities
+## Built-in vs. Custom Entities
 • Many system entities contain additional perks that custom
 entities will need additional configuration to provide
 – Opportunities, Quotes, Orders, and Invoices provide line
@@ -48,16 +48,16 @@ hurt us?
 – Are there ISV solutions that depend on us using this
 entity?
 
-## DH1107 User/Team vs. Organization
+## User/Team vs. Organization
 • When in doubt, choose User/Team
 • Organization is great for reference data
 
-## DH1108 Choosing other entity options
+## Choosing other entity options
 – Many entity options can’t be turned off once turned on
 • Notes, Activities , etc.
 – Enabling options if not needed creates extra overhead of relationships created
 
-## DH1109 Existing vs. New Field
+## Existing vs. New Field
 – Use fields for their intended purpose
 – Do you need field level security in the future?
 – Does existing data conform to the data type?
