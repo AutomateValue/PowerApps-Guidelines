@@ -1,12 +1,12 @@
 export const data = {
-  "key": "v-65f0ad2e",
-  "path": "/1000.environment-configuration/DH1202.html",
-  "title": "Regel DH1202",
+  "key": "v-380dd952",
+  "path": "/01.guide/1000.environment-configuration/DH1202.html",
+  "title": "Title DH1202",
   "lang": "en-US",
   "frontmatter": {
     "rule_id": 1202,
     "rule_category": "class-design",
-    "title": "Regel DH1202",
+    "title": "Title DH1202",
     "severity": "Recommended",
     "read_more": false
   },
@@ -20,16 +20,10 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1591459257000,
-    "contributors": [
-      {
-        "name": "remyvd",
-        "email": "remy.vanduijkeren@dynamichands.nl",
-        "commits": 1
-      }
-    ]
+    "updatedTime": null,
+    "contributors": []
   },
-  "filePathRelative": "1000.environment-configuration/DH1202.md"
+  "filePathRelative": "01.guide/1000.environment-configuration/DH1202.md"
 }
 
 if (import.meta.webpackHot) {

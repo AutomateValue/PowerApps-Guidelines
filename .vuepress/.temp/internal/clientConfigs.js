@@ -5,6 +5,7 @@ import clientConfig3 from 'C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-G
 import clientConfig4 from 'C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/node_modules/@vuepress/plugin-nprogress/lib/client/config.js'
 import clientConfig5 from 'C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/node_modules/@vuepress/plugin-theme-data/lib/client/config.js'
 import clientConfig6 from 'C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/node_modules/@vuepress/theme-default/lib/client/config.js'
+import clientConfig7 from 'C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/register-components/clientConfig.091b98ea.js'
 
 export const clientConfigs = [
   clientConfig0,
@@ -14,4 +15,5 @@ export const clientConfigs = [
   clientConfig4,
   clientConfig5,
   clientConfig6,
+  clientConfig7,
 ]

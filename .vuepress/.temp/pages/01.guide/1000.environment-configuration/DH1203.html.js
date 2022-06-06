@@ -1,12 +1,12 @@
 export const data = {
-  "key": "v-6286fbf0",
-  "path": "/1000.environment-configuration/DH1203.html",
-  "title": "Regel 1203",
+  "key": "v-34a42814",
+  "path": "/01.guide/1000.environment-configuration/DH1203.html",
+  "title": "This is another rule 3",
   "lang": "en-US",
   "frontmatter": {
     "rule_id": 1203,
     "rule_category": "class-design",
-    "title": "Regel 1203",
+    "title": "This is another rule 3",
     "severity": "Depends",
     "read_more": false
   },
@@ -20,16 +20,10 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1591459257000,
-    "contributors": [
-      {
-        "name": "remyvd",
-        "email": "remy.vanduijkeren@dynamichands.nl",
-        "commits": 1
-      }
-    ]
+    "updatedTime": null,
+    "contributors": []
   },
-  "filePathRelative": "1000.environment-configuration/DH1203.md"
+  "filePathRelative": "01.guide/1000.environment-configuration/DH1203.md"
 }
 
 if (import.meta.webpackHot) {

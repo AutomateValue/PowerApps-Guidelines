@@ -1,6 +1,6 @@
 export const data = {
-  "key": "v-6f09952d",
-  "path": "/1000.environment-configuration/installation-configuration.html",
+  "key": "v-1660bc1b",
+  "path": "/01.guide/1000.environment-configuration/installation-configuration.html",
   "title": "This is another rule 3",
   "lang": "en-US",
   "frontmatter": {
@@ -50,21 +50,10 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1654485104000,
-    "contributors": [
-      {
-        "name": "remyvd",
-        "email": "remy.vanduijkeren@dynamichands.nl",
-        "commits": 3
-      },
-      {
-        "name": "remyvd",
-        "email": "remy@automatevalue.com",
-        "commits": 1
-      }
-    ]
+    "updatedTime": null,
+    "contributors": []
   },
-  "filePathRelative": "1000.environment-configuration/installation-configuration.md"
+  "filePathRelative": "01.guide/1000.environment-configuration/installation-configuration.md"
 }
 
 if (import.meta.webpackHot) {
