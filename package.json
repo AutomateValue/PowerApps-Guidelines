@@ -2,9 +2,10 @@
   "private": true,
   "name": "powerapps-guidelines",
   "version": "1.0.0",
-  "description": "Coding standards and Guidelines for Customizing and Extending PowerApps & Dynamics 365",
+  "description": "Coding standards and Guidelines for Customizing and Extending PowerApps & Dynamics 365 Apps & Power Automate",
   "keywords": [
     "powerapps",
+    "powerautomate",
     "dynamics-crm",
     "dynamics-365",
     "d365",
@@ -12,12 +13,12 @@
     "coding-standards",
     "best-practices"
   ],
-  "homepage": "https://github.com/DynamicHands/PowerApps-Guidelines",
+  "homepage": "https://github.com/AutomateValue/PowerApps-Guidelines",
   "bugs": {
-    "url": "https://github.com/DynamicHands/PowerApps-Guidelines/issues"
+    "url": "https://github.com/AutomateValue/PowerApps-Guidelines/issues"
   },
-  "repository": "github:DynamicHands/PowerApps-Guidelines",
-  "author": "Rémy van Duijkeren <remy.vanduijkeren@dynamichands.nl (https://www.dynamichands.nl)",
+  "repository": "github:AutomateValue/PowerApps-Guidelines",
+  "author": "Remy van Duijkeren <remy@automatevalue.nl (https://www.dynamichands.nl)",
   "license": "LGPL-3.0",
   "main": "index.js",
   "scripts": {
@@ -25,8 +26,10 @@
     "build": "vuepress build"
   },
   "dependencies": {
-    "@vuepress/plugin-google-analytics": "^1.5.0",
-    "vuepress": "^1.5.0",
-    "vuepress-bar": "^0.3.1"
+    "@vuepress/plugin-google-analytics": "^1.9.7",
+    "vuepress-bar": "^0.4.4"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.46"
   }
 }

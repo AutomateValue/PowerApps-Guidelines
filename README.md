@@ -1,10 +1,16 @@
 ---
 home: true
+title: Home
 heroImage: logo.png
 heroText: PowerApps Guidelines
-tagline: Coding standards and Guidelines for Customizing and Extending PowerApps & Dynamics 365
-actionText: Get Started →
-actionLink: /00.introduction
+tagline: Coding standards and Guidelines for Customizing and Extending Power Apps, Dynamics 365 Apps & Power Automate 
+actions:
+  - text: Get Started →
+    link: /00.introduction
+    type: primary
+  - text: Introduction
+    link: /guide/
+    type: secondary
 features:
 - title: Code standards
   details: No confusions how to do and name parts of the solution. Understanding solutions faster of other projects.
@@ -12,12 +18,12 @@ features:
   details: Follow the best practices of experienced senior consultants and developers. Don re-invent the wheel again.
 - title: Improve
   details: Learn from this guidelines be reading it. Share your leasons learned and help improve this guidelines.
-footer: LGPL-3.0 | Copyright © 2020 DynamicHands
+footer: LGPL-3.0 | Copyright © 2022 AutomateValue
 ---
 
 # PowerApps Guidelines project
 
-This project attempts to provide guidelines for PowerApp/Dynamics365 projects done by DynamicHands.
+This project attempts to provide guidelines for the Power Platform, espacilly Power Apps, Power Automate and the Dynamics 365 CE apps.
 
 ## Set up and work locally
 
@@ -35,12 +41,19 @@ npm -v
 To install or update Node.js download the installer from <https://nodejs.org.> To update npm open the command line and type:
 
 ```sh
-npm packager npm install npm@latest -g
+npm install npm@latest -g
 ```
 
 Then restore all dependencies of the project by open the command line in the root of the project and type:
 ```sh
 npm install
+```
+
+To update existing packages to their latest version:
+
+```sh
+npm outdated # show out of date dependencies
+npm update
 ```
 
 ### Running
@@ -81,7 +94,7 @@ Please read [CONTRIBUTING.md](TODO) for details on our code of conduct, and the 
 
 ## Style of writing?
 
-Same as https://github.com/microsoft/api-guidelines/blob/vNext/azure/Guidelines.md ?
+Same as [Microsoft Azure REST API Guidelines]([https://github.com/microsoft/api-guidelines/blob/vNext/azure/Guidelines.md) ?
 
 :white_check_mark: **DO** adopt this pattern. If you feel you need an exception, contact the Azure HTTP/REST Stewardship Board **prior** to implementation.
 
