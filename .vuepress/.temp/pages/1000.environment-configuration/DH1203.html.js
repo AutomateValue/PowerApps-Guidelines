@@ -20,11 +20,16 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1591459257000,
+    "updatedTime": 1654501708000,
     "contributors": [
       {
         "name": "remyvd",
         "email": "remy.vanduijkeren@dynamichands.nl",
+        "commits": 1
+      },
+      {
+        "name": "remyvd",
+        "email": "remy@automatevalue.com",
         "commits": 1
       }
     ]

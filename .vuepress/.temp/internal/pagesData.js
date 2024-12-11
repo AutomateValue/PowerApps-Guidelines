@@ -5,6 +5,14 @@ export const pagesData = {
   "v-73005554": () => import(/* webpackChunkName: "v-73005554" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/CONTRIBUTING.html.js").then(({ data }) => data),
   // path: /
   "v-8daa1a0e": () => import(/* webpackChunkName: "v-8daa1a0e" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/index.html.js").then(({ data }) => data),
+  // path: /1200.naming-conventions/azure-resources.html
+  "v-5c63ceb0": () => import(/* webpackChunkName: "v-5c63ceb0" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1200.naming-conventions/azure-resources.html.js").then(({ data }) => data),
+  // path: /1200.naming-conventions/azure-tags.html
+  "v-50cbde04": () => import(/* webpackChunkName: "v-50cbde04" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1200.naming-conventions/azure-tags.html.js").then(({ data }) => data),
+  // path: /1200.naming-conventions/naming-conventions.html
+  "v-ba4dba04": () => import(/* webpackChunkName: "v-ba4dba04" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1200.naming-conventions/naming-conventions.html.js").then(({ data }) => data),
+  // path: /1100.user-experience-design/ux-design.html
+  "v-d652d7a8": () => import(/* webpackChunkName: "v-d652d7a8" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1100.user-experience-design/ux-design.html.js").then(({ data }) => data),
   // path: /1000.environment-configuration/DH1201.html
   "v-695a5e6c": () => import(/* webpackChunkName: "v-695a5e6c" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1000.environment-configuration/DH1201.html.js").then(({ data }) => data),
   // path: /1000.environment-configuration/DH1202.html
@@ -15,14 +23,6 @@ export const pagesData = {
   "v-6f09952d": () => import(/* webpackChunkName: "v-6f09952d" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1000.environment-configuration/installation-configuration.html.js").then(({ data }) => data),
   // path: /1000.environment-configuration/
   "v-6cf4ec6e": () => import(/* webpackChunkName: "v-6cf4ec6e" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1000.environment-configuration/index.html.js").then(({ data }) => data),
-  // path: /1100.user-experience-design/ux-design.html
-  "v-d652d7a8": () => import(/* webpackChunkName: "v-d652d7a8" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1100.user-experience-design/ux-design.html.js").then(({ data }) => data),
-  // path: /1200.naming-conventions/azure-resources.html
-  "v-5c63ceb0": () => import(/* webpackChunkName: "v-5c63ceb0" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1200.naming-conventions/azure-resources.html.js").then(({ data }) => data),
-  // path: /1200.naming-conventions/azure-tags.html
-  "v-50cbde04": () => import(/* webpackChunkName: "v-50cbde04" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1200.naming-conventions/azure-tags.html.js").then(({ data }) => data),
-  // path: /1200.naming-conventions/naming-conventions.html
-  "v-ba4dba04": () => import(/* webpackChunkName: "v-ba4dba04" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1200.naming-conventions/naming-conventions.html.js").then(({ data }) => data),
   // path: /1300.customization/entity-design.html
   "v-0cf8cfc0": () => import(/* webpackChunkName: "v-0cf8cfc0" */"C:/Users/RemyvanDuijkeren/OneDrive/Source/PowerApps-Guidelines/.vuepress/.temp/pages/1300.customization/entity-design.html.js").then(({ data }) => data),
   // path: /1400.extending-client-side/extending-clientside.html

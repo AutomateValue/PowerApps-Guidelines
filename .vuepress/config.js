@@ -4,6 +4,7 @@ const { path } = require('@vuepress/utils')
 //const { googleAnalyticsPlugin } = require('@vuepress/plugin-google-analytics')
 const { nav, sidebar } = require("vuepress-bar")({ addReadMeToFirstGroup: false });
 
+// https://github.com/vuejs/vuepress/issues/613
 sidebar.forEach(element => {
   element.text = element.title;
 

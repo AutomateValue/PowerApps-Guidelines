@@ -28,11 +28,52 @@ This will result into the following examples:
 - 📦 Acceptance
 - 🚦 Test
 - 🧪 Development
-- 👨‍💼 Personal
+- 👨‍💼 Personal Productivity (default)
 - 📊 Load Test
 
 This will result into a clear homescreen for the users.
 ![environment-naming-homescreen](/assets/environment-naming-homescreen.png)
+
+## Name Default Environment 'Personal Productivity'
+
+A single default environment is automatically created by Power Apps for each tenant and shared by all users in that tenant. Whenever a new user signs up for Power Apps, they're automatically added to the Maker role of the default environment.
+
+The default environment is created in the region closest to the default region of the Azure AD tenant. There is specific guidance for the Default environment to call out because of its unique nature:
+
+- It’s automatically created with the first user in the region closest to the Azure AD tenant
+- New users that sign up for Power Apps are automatically added to the Maker role
+- Users are not automatically added to the Environment Admin role
+- The default environment can’t be deleted, but you can rename it – e.g., Personal Productivity (do it now, if you haven't!)
+
+https://docs.microsoft.com/en-us/microsoft-365/community/defining-a-power-platform-environment-strategy
+
+What is the default environment?
+
+A default environment is a particular type of production environment. Each tenant has a default environment that’s created automatically. For each tenant, a default environment is automatically created by Power Apps, which is shared by all users. Whenever a new user signs up for Power Apps, they’re automatically added to the Maker role of the default environment. So it is seen as a public environment of your tenant.
+
+Why not use the default environment for production?
+
+You can’t backup and restore the default environment.
+The default environment is limited to 32 GB of storage capacity. In case you need to store more data, you can create a production environment.
+Helps to segregate data and apps so that other environments can not use them.
+Everyone in your tenant has permissions to create apps and flows in default. There currently is no way to block the Environment Maker role assignment in the Default environment.
+Non-default environments offer more control around permissions.
+What’s the use of the default environment then?
+
+It is used the environment as a user and team productivity environment for the business groups, not business-important or mission-critical apps. Hence it is recommended to rename the environment through the admin center to make the purpose of that environment self-explanatory.
+This environment is used for first-party integrations, like creating an app from a SharePoint list. Learn more: The default environment. Thus, This environment can’t be disabled or deleted because it hosts integration with products like SharePoint and Project.
+
+https://summitbajracharya.com.np/powerapps-default-environment-important-things-you-must-know/
+
+Name it something like:
+- Personal
+- Personal (default)
+- Personal Productivity
+- Personal Productivity (default)
+- 👨‍💼 Personal
+- 👨‍💼 Personal (default)
+- 👨‍💼 Personal Productivity
+- 👨‍💼 Personal Productivity (default)
 
 ## Don't use `new_` as prefix <Required/>
 
