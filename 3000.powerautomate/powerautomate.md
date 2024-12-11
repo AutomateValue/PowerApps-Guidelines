@@ -28,6 +28,10 @@ This plural name is not the plural name of the entity, but created by odata. It 
 <org ur>/api/data/v9.1/EntityDefinitions(LogicalName='<LogicalName>')?$select=EntitySetName
 ````
 
+Or got to Maker Portal and go to Tables > Table > Table properties > Tools > Copy Set Name.
+
+![copy entity set name](/assets/powerautomate-copy-setname.jpg)
+
 ## Avoid unneeded Apply to Each steps ##
 
 If only one value is needed or is returned then doing an Apply to Each step is not needed.
