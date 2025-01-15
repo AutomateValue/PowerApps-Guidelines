@@ -114,3 +114,24 @@ Estimation is partly dependend on the number of fields. Proberly 1 to 2 hours pe
 
 
 ## https://docs.microsoft.com/en-us/powerapps/maker/model-driven-apps/design-productive-forms
+
+
+# Required Fields considerations
+Post by Parvez Ghumra on LinkedIn:
+https://www.linkedin.com/posts/parvezghumra_powerplatform-powerapps-powerautomate-activity-7284841745631096834-Yp-U?utm_source=share&utm_medium=member_desktop
+
+Just because a Dataverse column is configured as 'Business Required' at the column metadata level, does not make it safe to assume that: 
+
+1️⃣ It will always be mandatory - things change frequently in agile development. Nobody will ever have time to check the potential impact before making it optional
+
+2️⃣ It will be mandatory in every environment - not every target environment will always have the same version of your solution installed. Even if they do, there's no guarantee that other solutions/customisations in any target environment will not make it optional
+
+3️⃣ Every row in every target environment will always contain a value in such a column - rows can be created/updated via the API, through automation logic, via external tools, integration, data migration etc. Column requirement levels for 'Business Required' columns are not enforced on rows created/updated via these routes.
+
+So developers, makers, citizen developers, consultants, architects, etc....PLEASE, stop making such assumptions in your logic by:
+
+✅ Ensuring you have sufficient checking for NULL values and error-handling in your logic (whether that is JavaScript, Plugins, Workflows, Custom APIs, Cloud Flows, Logic Apps, Azure Functions, Web Jobs, integrations, custom applications etc.
+
+✅ Scripting and implementing test cases to detect such assumptions so that they can be remediated
+
+✅ Avoiding 'blue-sky-thinking' and exclusively testing only the 'happy path'
